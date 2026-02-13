@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
   location: "Chicago, IL",
   email: "rstrom1990@gmail.com",
   linkedin: "linkedin.com/in/richardstrom",
-  profileImage: "../profile.jpg"
+  profileImage: "./profile.jpg"
 };
 
 export const EXPERIENCES: Experience[] = [
