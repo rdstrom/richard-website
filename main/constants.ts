@@ -8,9 +8,9 @@ export const PERSONAL_INFO = {
   tagline: "Bridging the gap between Manufacturing Physicality and Data Science Abstraction.",
   about: "I am currently the Senior Manager of Digital Transformation for Komatsu, passionate about manufacturing and data science. My academic background is in stochastic optimization and quantitative risk analysis, leveraging LLMs and ML models to solve complex industrial problems.",
   location: "Chicago, IL",
-  email: "richard.strom@example.com",
+  email: "rstrom1990@gmail.com",
   linkedin: "linkedin.com/in/richardstrom",
-  profileImage: "/profile.jpg"
+  profileImage: "../profile.jpg"
 };
 
 export const EXPERIENCES: Experience[] = [
