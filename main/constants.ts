@@ -21,7 +21,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Feb 2026 – Current",
     description: "Owns and drives the global Digital Transformation roadmap, overseeing applications, technology systems, data product architecture, and AI-enabled solutions across platforms and translates strategic manufacturing and supply chain objectives into scalable, data driven solutions\n• Design and scale enterprise data architecture and innovation\n• Own and execute the global Digital Transformation roadmap\n• Drive organizational change and capability building\n• Champion AI and advanced analytics adoption",
     technologies: ["Digital Strategy", "Data Architecture", "Digital Transformation", "Advanced Mfg."],
-    logo: "./public/images/companies/komatsu.png"
+    logo: "/images/companies/komatsu.png"
   },
   {
     id: '2',
@@ -30,7 +30,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2025 – Feb 2026",
     description: "Spearheading digital transformation initiatives by designing and deploying advanced analytic frameworks and LLM-powered solutions to solve complex operational challenges in manufacturing.\n• Led the design, development, and deployment of an LLM-powered, stochastic clustering-based recommendation system to match surface mining product failure cases with known issues, generate new product issue reports, and provide severity scoring, reducing issue identification time by 33% and cutting annual warranty costs by $2M.\n• Led the design, development, and deployment of a construction equipment quality analytic system combining multiple source systems into enterprise data products, utilizing ML models to cluster common failures and building quality specific LLMs allowing engineers to gather critical information in record time.\n• Developed analytic product framework abstracting away unit specific business processes yielding a 90% reduction in development time compared to historic process.\n• Worked cross-functionally with advanced manufacturing org. to develop inventory management strategies and define metrics to evaluate operations health.",
     technologies: ["LLM", "Stochastic Clustering", "Product Strategy", "Advanced Manufacturing"],
-    logo: "./public/images/companies/komatsu.png"
+    logo: "/images/companies/komatsu.png"
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Mar 2019 – Jun 2024",
     description: "Served as a key Data Scientist optimizing enterprise inventory and manufacturing processes through the development of stochastic models, emulators, and automated authoring tools.\n• Designed, developed, and deployed a stochastic inventory optimization model capable of optimizing an enterprise's inventory parameters in hours and driving a measured 4 million dollars in inventory reduction, with 20+ million dollars in further reduction opportunity identified.\n• Developed a python based SAP MRP emulator, enabling users in the enterprise to evaluate MRP parameters out of system.\n• Designed, developed, and deployed automated work instruction authoring model capable of predicting 75 percent of work instructions leading to a 1.25 million dollar reduction in work instruction authoring costs.\n• Worked cross-functionally with manufacturing, material flow, and supply management to develop a time-series data portfolio enabling sophisticated modeling, delivering 60+ data products to the enterprise consumed by 13,000+ users.",
     technologies: ["Stochastic Optimization", "Python", "SAP MRP", "Time-Series Modeling"],
-    logo: "./public/images/companies/john-deere.png"
+    logo: "/images/companies/john-deere.png"
   },
   {
     id: '4',
@@ -48,7 +48,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Nov 2017 – Mar 2019",
     description: "Led data-driven initiatives to streamline warranty processes and reporting, utilizing simulation models and automated auditing tools to enhance operational efficiency.\n• Developed warranty claim simulations and models, revising warranty policies leading to a 10% reduction in manually reviewed claims while remaining cost neutral.\n• Developed automated python based audits and reporting tools, reducing 30 min. per day of reporting work and increasing audit participation by 50%.\n• Developed R Shiny and Tableau report, resulting in a reduction in reporting times, easier access for field teams to gather insights, and fostering a positive culture around data-driven decision-making.",
     technologies: ["Warranty Simulation", "Python", "R Shiny", "Tableau"],
-    logo: "./public/images/companies/john-deere.png"
+    logo: "/images/companies/john-deere.png"
   },
   {
     id: '5',
@@ -57,7 +57,7 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2013 – Mar 2019",
     description: "Led development and deployment of advanced analytics solutions across logistics and material flow at John Deere, delivering data-driven tools that improved inventory management, transportation cost efficiency, and factory responsiveness.\n• Replaced multiple legacy Access databases and Excel reports with an MSSQL solution, reducing reporting and data maintenance time from 60 to 15 hours per week.\n• Developed a mobile inventory alerting tool that eliminated 400 minutes of unproductive labor per day; solution was later adopted and deployed enterprise-wide.\n• Built a Python-based service parts scheduling optimization model, improving asset utilization and factory responsiveness to customer demand.\n• Designed specialized transportation cost models generating $125K in annual savings and led deployment of parameter optimization tools across manufacturing stakeholders.",
     technologies: ["Network Optimization", "Python", "R Shiny", "Tableau"],
-    logo: "./public/images/companies/john-deere.png"
+    logo: "/images/companies/john-deere.png"
   }
 ];
 
@@ -68,7 +68,7 @@ export const EDUCATION: Education[] = [
     institution: "Purdue University",
     year: "2022 – 2024",
     details: "Focus: Operations Research",
-    logo: "./public/images/education/purdue.png"
+    logo: "/images/education/purdue.png"
   },
   {
     id: '2',
@@ -76,7 +76,7 @@ export const EDUCATION: Education[] = [
     institution: "Purdue University",
     year: "2008 – 2012",
     details: "Focus: Operations, M.I.S",
-    logo: "./public/images/education/purdue.png"
+    logo: "/images/education/purdue.png"
   }
 ];
 
@@ -123,21 +123,21 @@ export const PROJECTS: Project[] = [
     id: 'p1',
     title: "Stochastic Inventory Optimization",
     description: "A comprehensive dashboard for online retailers to track sales, manage inventory, and analyze customer trends in real-time.",
-    image: "./public/images/projects/project1.jpg",
+    image: "/images/projects/project1.jpg",
     tags: ["Pyspark", "Databricks", "Bayesian Inference"]
   },
   {
     id: 'p2',
     title: "Machine Failure Case Clustering",
     description: "A clean, responsive chat interface wrapping the OpenAI API. Features include streaming responses, dark mode, and chat history.",
-    image: "./public/images/projects/project2.jpg",
+    image: "/images/projects/project2.jpg",
     tags: ["Palantir Foundry", "Density Based Clustering", "LLM Embeddings"]
   },
   {
     id: 'p3',
     title: "Quality Issue Detection and Resolution Application",
     description: "A mobile-first web application for booking flights and hotels. focused heavily on accessibility and performance metrics.",
-    image: "./public/images/projects/project3.jpg",
+    image: "/images/projects/project3.jpg",
     tags: ["Palantir Foundry", "Density Based Clustering", "LLM Embeddings"]
   }
 ];
