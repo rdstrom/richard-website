@@ -19,10 +19,10 @@ const Hero: React.FC = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">{USER_INFO.name}</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-400 font-light mb-6">
+          <h2 className="text-2xl md:text-3xl text-white font-light mb-6">
             {USER_INFO.title}
           </h2>
-          <p className="text-lg text-slate-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+          <p className="text-lg text-white mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
             {USER_INFO.about}
           </p>
 
