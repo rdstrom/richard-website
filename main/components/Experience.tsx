@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
                       </div>
                       
                       {/* Summary */}
-                      <p className="text-slate-400 mb-4 leading-relaxed">{summary}</p>
+                      <p className="text-white mb-4 leading-relaxed">{summary}</p>
 
                       {/* Expandable Details */}
                       {details.length > 0 && (
