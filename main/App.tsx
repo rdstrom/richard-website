@@ -1,5 +1,4 @@
 import React from 'react';
-import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Education from './components/Education';
@@ -22,7 +21,6 @@ function App() {
         <Accomplishments />
       </main>
       <Footer />
-      <Analytics />
     </div>
   );
 }
