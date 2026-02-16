@@ -3,9 +3,9 @@ export interface Experience {
   role: string;
   company: string;
   period: string;
-  summary: string;
-  achievements: string[];
-  skills: string[];
+  description: string;
+  technologies: string[];
+  logo: string;
 }
 
 export interface Education {
@@ -13,21 +13,41 @@ export interface Education {
   degree: string;
   institution: string;
   year: string;
-  focus: string;
+  details: string;
+  logo?: string;
+}
+
+export interface Competency {
+  name: string;
+  description: string;
 }
 
 export interface Project {
   id: string;
   title: string;
-  category: 'Data Science' | 'Manufacturing' | 'Optimization';
   description: string;
-  technologies: string[];
+  image: string;
   link?: string;
+  tags: string[];
+}
+
+export interface Skill {
+  name: string;
+  proficiency: number;
+  category: string;
+}
+
+export interface Accomplishment {
+  id: string;
+  title: string;
+  metric: string;
+  description: string;
+  icon: string;
 }
 
 export interface ChatMessage {
   id: string;
   role: 'user' | 'model';
   text: string;
-  timestamp: number;
+  isLoading?: boolean;
 }

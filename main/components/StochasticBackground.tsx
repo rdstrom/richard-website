@@ -113,7 +113,7 @@ const StochasticBackground: React.FC = () => {
 
       // 1. History Path (The Past)
       ctx.beginPath();
-      ctx.strokeStyle = '#94a3b8'; // slate-400
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.5)'; // slate-400 with 50% opacity
       ctx.lineWidth = 2.5;
       ctx.lineJoin = 'round';
       if (historyPath.length > 0) {

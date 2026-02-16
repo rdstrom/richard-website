@@ -1,40 +1,37 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
-import { Code, Database, Settings } from 'lucide-react';
+import ImageWithFallback from './ImageWithFallback';
 
 const Projects: React.FC = () => {
   return (
-    <section className="py-20 px-4 bg-slate-900/50">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">Featured Projects</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="projects" className="py-24 bg-slate-900/80 backdrop-blur-sm">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project) => (
-            <div key={project.id} className="group relative bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-emerald-900/20 transition-all duration-300 hover:-translate-y-1">
-              {/* Category Badge */}
-              <div className="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur text-xs font-semibold text-emerald-400 rounded-full border border-slate-700 z-10">
-                {project.category}
+            <div key={project.id} className="group bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300">
+              <div className="relative h-48 overflow-hidden bg-slate-800">
+                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10"></div>
+                <ImageWithFallback 
+                  src={project.image} 
+                  alt={project.title} 
+                  fallbackType="project"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-
-              <div className="p-6 h-full flex flex-col">
-                <div className="mb-4 text-emerald-500 p-3 bg-slate-900/50 w-fit rounded-lg">
-                    {project.category === 'Optimization' && <Settings size={24} />}
-                    {project.category === 'Data Science' && <Database size={24} />}
-                    {project.category === 'Manufacturing' && <Code size={24} />}
-                </div>
-
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-slate-400 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
-
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-700">
-                  {project.technologies.map(tech => (
-                    <span key={tech} className="text-xs text-slate-500 bg-slate-900 px-2 py-1 rounded">
-                      {tech}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-2 py-1 bg-slate-900/50 text-slate-300 text-xs rounded border border-slate-700">
+                      {tag}
                     </span>
                   ))}
                 </div>

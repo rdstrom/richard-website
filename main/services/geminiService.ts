@@ -1,61 +1,49 @@
-import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
-import { PERSONAL_INFO, EXPERIENCES, EDUCATION, PROJECTS } from '../constants';
+import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
+import { AI_SYSTEM_INSTRUCTION } from "../constants";
 
-const apiKey = process.env.API_KEY || '';
+let chatSession: Chat | null = null;
 
-// System instruction to give the AI context about the persona
-const SYSTEM_INSTRUCTION = `
-You are the professional AI persona of ${PERSONAL_INFO.name}, currently working as ${PERSONAL_INFO.title} at ${PERSONAL_INFO.company}.
-Your goal is to answer questions about ${PERSONAL_INFO.name} professional background, skills, and projects based on the following data.
-Keep answers concise, professional, and knowledgeable.
-Reflect a passion for manufacturing, data science, and stochastic optimization.
+export const getGeminiChatSession = (): Chat => {
+  if (chatSession) return chatSession;
 
-Background Data:
-- About: ${PERSONAL_INFO.about}
-- Education: ${JSON.stringify(EDUCATION)}
-- Experience: ${JSON.stringify(EXPERIENCES)}
-- Projects: ${JSON.stringify(PROJECTS)}
-- Key Skills: Stochastic Optimization, Quantitative Risk Analysis, Digital Transformation.
-
-If a user asks about something not in this data, politely state that you can only answer questions regarding professional background or suggest contacting Alex directly.
-Do not hallucinate personal private details not listed here.
-`;
-
-let aiClient: GoogleGenAI | null = null;
-
-const getClient = () => {
-  if (!aiClient && apiKey) {
-    aiClient = new GoogleGenAI({ apiKey });
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) {
+    console.warn("API_KEY is missing. AI features will not work.");
+    // Return a dummy object or handle error gracefully in a real app
+    // For this demo, we assume the key is present as per instructions.
   }
-  return aiClient;
+
+  const ai = new GoogleGenAI({ apiKey: apiKey });
+
+  chatSession = ai.chats.create({
+    model: 'gemini-3-flash-preview',
+    config: {
+      systemInstruction: AI_SYSTEM_INSTRUCTION,
+      temperature: 0.7,
+      maxOutputTokens: 500,
+    },
+  });
+
+  return chatSession;
 };
 
-export const sendMessageToGemini = async (history: { role: string; parts: { text: string }[] }[], newMessage: string): Promise<string> => {
-  const client = getClient();
-  if (!client) {
-    return "I'm sorry, my AI brain isn't connected right now (Missing API Key).";
-  }
-
+export const sendMessageToGemini = async (message: string): Promise<AsyncIterable<string>> => {
+  const session = getGeminiChatSession();
+  
   try {
-    const model = 'gemini-3-flash-preview';
+    const responseStream = await session.sendMessageStream({ message });
     
-    // We construct a chat-like history for the generateContent call if needed, 
-    // or use the chat API. Using the Chat API is cleaner for conversation.
-    const chat = client.chats.create({
-      model: model,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-      },
-      history: history // Pass previous history
-    });
-
-    const result: GenerateContentResponse = await chat.sendMessage({
-      message: newMessage
-    });
-
-    return result.text || "I didn't catch that. Could you rephrase?";
+    // Create an async generator to yield chunks of text
+    return (async function* () {
+      for await (const chunk of responseStream) {
+        const c = chunk as GenerateContentResponse;
+        if (c.text) {
+          yield c.text;
+        }
+      }
+    })();
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    return "I encountered a temporary error while processing your request.";
+    console.error("Error sending message to Gemini:", error);
+    throw error;
   }
 };
