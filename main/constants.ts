@@ -10,7 +10,7 @@ export const USER_INFO = {
   github: "github.com/richardstrom",
   linkedin: "www.linkedin.com/in/richard-d-strom/",
   // Standardized to absolute path from root including public directory
-  profileImage: "./main/public/images/profile.jpg"
+  profileImage: "/main/public/images/profile.jpg"
 };
 
 export const EXPERIENCES: Experience[] = [
