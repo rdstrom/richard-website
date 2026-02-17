@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'p3',
     title: "Quality Issue Detection and Resolution Application",
-    description: "a Product Issue Identification tool that clusters failure signals to detect emerging quality trends, incorporates a custom internal LLM for root-cause analysis, and automatically generates structured, LLM-driven quality reports to accelerate investigation and resolution workflows",
+    description: "A product issue identification tool that clusters failure signals to detect emerging quality trends, incorporates a custom internal LLM for root cause analysis, and automatically generates structured, LLM driven quality reports to accelerate investigation and resolution workflows",
     image: "/images/projects/project1.jpg",
     tags: ["Palantir Foundry", "Density Based Clustering", "Agentic Agents", "Ontology"]
   }
