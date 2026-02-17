@@ -122,23 +122,23 @@ export const PROJECTS: Project[] = [
   {
     id: 'p1',
     title: "Stochastic Inventory Optimization",
-    description: "A comprehensive dashboard for online retailers to track sales, manage inventory, and analyze customer trends in real-time.",
-    image: "/images/projects/project1.jpg",
-    tags: ["Pyspark", "Databricks", "Bayesian Inference"]
+    description: "A stochastic inventory optimization model using Bayesian inference to quantify demand, supplier and internal uncertainty and dynamically update reorder policies, reducing stockouts and excess holding costs through data driven decision making.",
+    image: "/images/projects/project2.jpg",
+    tags: ["Pyspark", "Databricks", "Bayesian Inference", "Convex Optimization"]
   },
   {
     id: 'p2',
     title: "Machine Failure Case Clustering",
-    description: "A clean, responsive chat interface wrapping the OpenAI API. Features include streaming responses, dark mode, and chat history.",
-    image: "/images/projects/project2.jpg",
+    description: "A probabilistic failure clustering system that combines traditional clustering techniques with structured LLM models enabling quality groups to identify and resolve product issues at record speed",
+    image: "/images/projects/project3.jpg",
     tags: ["Palantir Foundry", "Density Based Clustering", "LLM Embeddings"]
   },
   {
     id: 'p3',
     title: "Quality Issue Detection and Resolution Application",
-    description: "A mobile-first web application for booking flights and hotels. focused heavily on accessibility and performance metrics.",
-    image: "/images/projects/project3.jpg",
-    tags: ["Palantir Foundry", "Density Based Clustering", "LLM Embeddings"]
+    description: "a Product Issue Identification tool that clusters failure signals to detect emerging quality trends, incorporates a custom internal LLM for root-cause analysis, and automatically generates structured, LLM-driven quality reports to accelerate investigation and resolution workflows",
+    image: "/images/projects/project1.jpg",
+    tags: ["Palantir Foundry", "Density Based Clustering", "Agentic Agents", "Ontology"]
   }
 ];
 
