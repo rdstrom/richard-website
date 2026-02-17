@@ -19,7 +19,7 @@ export const EXPERIENCES: Experience[] = [
     role: "Senior Manager Digital Transformation",
     company: "Komatsu",
     period: "Feb 2026 – Current",
-    description: "Owns and drives the global Digital Transformation roadmap, overseeing applications, technology systems, data product architecture, and AI-enabled solutions across platforms and translates strategic manufacturing and supply chain objectives into scalable, data driven solutions\n• Design and scale enterprise data architecture and innovation\n• Own and execute the global Digital Transformation roadmap\n• Drive organizational change and capability building\n• Champion AI and advanced analytics adoption",
+    description: "Owns and drives the global Digital Transformation roadmap, overseeing applications, technology systems, data product architecture, and AI enabled solutions across platforms and translates strategic manufacturing and supply chain objectives into scalable, data driven solutions.\n• Design and scale enterprise data architecture and innovation.\n• Own and execute the global Digital Transformation roadmap.\n• Drive organizational change and capability building.\n• Champion AI and advanced analytics adoption.",
     technologies: ["Digital Strategy", "Data Architecture", "Digital Transformation", "Advanced Mfg."],
     logo: "/images/companies/komatsu.png"
   },
